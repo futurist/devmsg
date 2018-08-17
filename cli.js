@@ -1,30 +1,30 @@
 #!/usr/bin/env node
 
-const updateNotifier = require('update-notifier');
+const updateNotifier = require('update-notifier')
 // Tell user if there's a newer version.
-updateNotifier({ pkg: require('./package.json') }).notify({ isGlobal: true });
+updateNotifier({ pkg: require('./package.json') }).notify({ isGlobal: true })
 
-const os = require('os');
-const path = require('path');
-const { launch } = require('./lib/launcher.js');
+const os = require('os')
+const path = require('path')
+const { launch } = require('./lib/launcher.js')
 
 if (process.argv.length > 2 && (process.argv[2] === '-v' || process.argv[2] === '--version')) {
-  console.log(`v${require('./package.json').version}`);
-  process.exit(0);
+  console.log(`v${require('./package.json').version}`)
+  process.exit(0)
 }
 
 if (process.argv.length > 2 && process.argv[2] === '--help') {
-  console.log('Usage:');
-  console.log('');
-  console.log('Prepend devmsg in front of binary:');
-  console.log('  devmsg npm run start');
-  console.log('  devmsg webpack');
-  console.log('  devmsg npx webpack');
-  console.log('');
-  console.log('Launch devmsg standalone:');
-  console.log('  devmsg .');
-  console.log('');
-  process.exit(0);
+  console.log('Usage:')
+  console.log('')
+  console.log('Prepend devmsg in front of binary:')
+  console.log('  devmsg npm run start')
+  console.log('  devmsg webpack')
+  console.log('  devmsg npx webpack')
+  console.log('')
+  console.log('Launch devmsg standalone:')
+  console.log('  devmsg .')
+  console.log('')
+  process.exit(0)
 }
 
 process.on('unhandledRejection', console.log)
@@ -41,5 +41,4 @@ launch({
   localConfigFile: path.join(process.cwd(), 'devmsg.config.js')
 }).then(() => {
   console.log('launched')
-});
-
+})

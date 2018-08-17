@@ -2,16 +2,24 @@
   "name": "devmsg",
   "version": "1.0.0",
   "description": "",
-  "main": "cli.js",
+  "bin": "cli.js",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "James Yang <jamesyang999@gmail.com>",
+  "license": "MIT",
   "dependencies": {
     "update-notifier": "^2.5.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.3.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0"
   }
 }
